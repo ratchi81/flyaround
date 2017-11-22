@@ -128,9 +128,9 @@ class Reservation
      *
      * @return Reservation
      */
-    public function setPassenger($passengers)
+    public function setPassenger($passenger)
     {
-        $this->passengers = $passengers;
+        $this->passenger = $passenger;
 
         return $this;
     }
@@ -142,7 +142,7 @@ class Reservation
      */
     public function getPassenger()
     {
-        return $this->passengers;
+        return $this->passenger;
     }
 
     /**
@@ -231,9 +231,9 @@ class Reservation
      *
      * @return Reservation
      */
-    public function addPassenger(\WCS\CoavBundle\Entity\User $passengers)
+    public function addPassenger(\WCS\CoavBundle\Entity\User $passenger)
     {
-        $this->passengers[] = $passengers;
+        $this->passenger[] = $passenger;
 
         return $this;
     }
@@ -243,9 +243,9 @@ class Reservation
      *
      * @param \WCS\CoavBundle\Entity\User $passenger
      */
-    public function removePassenger(\WCS\CoavBundle\Entity\User $passengers)
+    public function removePassenger(\WCS\CoavBundle\Entity\User $passenger)
     {
-        $this->passengers->removeElement($passengers);
+        $this->passenger->removeElement($passenger);
     }
 
     /**
