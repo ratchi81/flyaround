@@ -14,7 +14,7 @@ class Terrain
 {
     /* Adding personal methods */
 
-    public function  __toString()
+    public function __toString()
     {
         // Return the Terrain Object with "[ICAO] - [NAME] [ZIPCODE]" format, when __toString is called
         return $this->icao . " - " .$this->name . "  - " .$this->zipcode;

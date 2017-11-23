@@ -14,7 +14,7 @@ class User
 {
     /* Adding personal methods */
 
-    public function  __toString()
+    public function __toString()
     {
         return $this->firstName ." ".$this->lastName;
     }
@@ -96,32 +96,32 @@ class User
     /**
      * @ORM\ManyToOne(targetEntity="WCS\CoavBundle\Entity\Review" , inversedBy="reviews")
      */
-    private $reviews;
+    private $review;
 
     /**
-    * @ORM\ManyToMany(targetEntity="WCS\CoavBundle\Entity\Reservation", inversedBy="passengers")
+    * @ORM\ManyToMany(targetEntity="WCS\CoavBundle\Entity\Reservation", mappedBy="passengers")
     * @ORM\JoinColumn(nullable=false)
     */
     private $reservations;
 
 
     /**
-     * @ORM\OneToMany(targetEntity="WCS\CoavBundle\Entity\Flight" , mappedBy="pilots")
+     * @ORM\OneToMany(targetEntity="WCS\CoavBundle\Entity\Flight" , mappedBy="pilot")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $pilot;
+    private $pilots;
 
     /**
-     * @ORM\OneToMany(targetEntity="WCS\CoavBundle\Entity\Review" , mappedBy="userRateds")
+     * @ORM\OneToMany(targetEntity="WCS\CoavBundle\Entity\Review" , mappedBy="userRated")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $userRated;
+    private $userRateds;
 
     /**
-     * @ORM\OneToMany(targetEntity="WCS\CoavBundle\Entity\Review" , mappedBy="reviewAuthors")
+     * @ORM\OneToMany(targetEntity="WCS\CoavBundle\Entity\Review" , mappedBy="reviewAuthor")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $reviewAuthor;
+    private $reviewAuthors;
 
 
 
@@ -372,7 +372,7 @@ class User
      */
     public function getReviews()
     {
-        return $this->reviews;
+        return $this->review;
     }
     /**
      * Constructor
@@ -413,7 +413,7 @@ class User
      */
     public function getReservations()
     {
-        return $this->reservations;
+        return $this->reservation;
     }
 
     /**
@@ -526,5 +526,59 @@ class User
     public function getReviewAuthor()
     {
         return $this->reviewAuthor;
+    }
+
+    /**
+     * Get userRateds
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUserRateds()
+    {
+        return $this->userRateds;
+    }
+
+    /**
+     * Get reviewAuthors
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getReviewAuthors()
+    {
+        return $this->reviewAuthors;
+    }
+
+    /**
+     * Set review
+     *
+     * @param \WCS\CoavBundle\Entity\Review $review
+     *
+     * @return User
+     */
+    public function setReview(\WCS\CoavBundle\Entity\Review $review = null)
+    {
+        $this->review = $review;
+
+        return $this;
+    }
+
+    /**
+     * Get review
+     *
+     * @return \WCS\CoavBundle\Entity\Review
+     */
+    public function getReview()
+    {
+        return $this->review;
+    }
+
+    /**
+     * Get reservation
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getReservation()
+    {
+        return $this->reservation;
     }
 }

@@ -53,7 +53,7 @@ class Review
     private $note;
 
     /**
-     *  @ORM\OneToMany(targetEntity="WCS\CoavBundle\Entity\User" , mappedBy="reviews")
+     *  @ORM\OneToMany(targetEntity="WCS\CoavBundle\Entity\User" , mappedBy="review")
      */
     private $reviews;
 

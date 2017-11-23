@@ -14,7 +14,7 @@ class PlaneModel
 {
     /* Adding personal methods */
 
-    public function  __toString()
+    public function __toString()
     {
         return $this->model . " - " .$this->manufacturer;
     }
@@ -66,10 +66,10 @@ class PlaneModel
     private $isAvailable;
 
     /**
-     * @ORM\OneToMany(targetEntity="WCS\CoavBundle\Entity\Flight" , mappedBy="planes")
+     * @ORM\OneToMany(targetEntity="WCS\CoavBundle\Entity\Flight" , mappedBy="plane")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $plane;
+    private $planes;
 
 
     /**
@@ -241,5 +241,15 @@ class PlaneModel
     public function getPlane()
     {
         return $this->plane;
+    }
+
+    /**
+     * Get planes
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPlanes()
+    {
+        return $this->planes;
     }
 }
