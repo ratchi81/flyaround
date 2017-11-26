@@ -26,6 +26,13 @@ wcs_coav:
     resource: "@WCSCoavBundle/Resources/config/routing.yml"
     prefix:   /
 
+wcs_coav_listing:
+    resource: "@WCSCoavBundle/Controller/ListingController.php"
+    type:     annotation
+
+wcs_coav_review:
+    resource: "@WCSCoavBundle/Controller/ReviewController.php"
+    type:     annotation
 
 #app:
  #   resource: '@AppBundle/Controller/'

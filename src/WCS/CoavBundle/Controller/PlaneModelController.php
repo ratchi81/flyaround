@@ -40,7 +40,7 @@ class PlaneModelController extends Controller
     public function newAction(Request $request)
     {
         $planeModel = new Planemodel();
-        $form = $this->createForm('WCS\CoavBundle\Form\PlaneModelType', $planeModel);
+        $form = $this->createForm('WCS\CoavBundle\Form\PlaneType', $planeModel);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
