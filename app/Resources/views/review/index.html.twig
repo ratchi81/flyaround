@@ -15,24 +15,14 @@
         </tr>
         </thead>
         <tbody>
-        {% for reviews in review %}
+        {% for review in reviews %}
             <tr>
-                <td><a href="{{ path('review_show', { 'id': reviews.id }) }}">{{ review.id }}</a></td>
-                <td>{{ reviews.text }}</td>
-                <td>{{ reviews.publicationDate }}</td>
-                <td>{{ reviews.note }}</td>
-                <td>{{ reviews.user_rated_id }}</td>
-                <td>{{ reviews.review_author_id }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('review_show', { 'id': reviews.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('review_edit', { 'id': reviews.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
+                <td>{{ review.id }}</td>
+                <td>{{ review.text }}</td>
+                <td>{{ review.publicationDate | date("m/d/Y") }}</td>
+                <td>{{ review.note }}</td>
+                <td>{{ review.userRated }}</td>
+                <td>{{ review.reviewAuthor }}</td>
             </tr>
         {% endfor %}
         </tbody>
